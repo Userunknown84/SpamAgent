@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "clawless": "^0.4.13",
+    "gitclaw": "^1.1.8"
+  }
+}

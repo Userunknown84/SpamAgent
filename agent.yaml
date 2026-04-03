@@ -1,0 +1,11 @@
+spec_version: "0.1.0"
+name: spam-detection-agent
+version: 0.1.0
+description: "Classifies SMS, Emails, and Links as Spam, Fishy, or Safe"
+model:
+  preferred: claude-sonnet-4-5-20250929
+skills:
+  - classify-message
+tags:
+  - hackathon
+  - spam-detection
