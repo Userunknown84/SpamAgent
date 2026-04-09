@@ -7,6 +7,10 @@ vectorizer = joblib.load("models/tfidf_vectorizer.pkl")
 model = joblib.load("models/linear_svm_model.pkl")
 label_encoder = joblib.load("models/label_encoder.pkl")
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 958b2b4 (commit)
 def extract_links(text):
     """Extract URLs from the text"""
     return re.findall(r'http[s]?://\S+', text)
@@ -32,7 +36,11 @@ def classify_message(message):
         else:
             url_results.append((u, "Safe"))
 
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 958b2b4 (commit)
     if suspicious and ml_label.lower() in ['ham', 'safe']:
         final_label = 'Fishy'
     else:
@@ -44,6 +52,10 @@ def classify_message(message):
 
     return final_label, reason, url_results
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 958b2b4 (commit)
 st.set_page_config(page_title="Spam / Phishing Detector", layout="centered")
 st.title("📬 Spam / Fishy / Safe Detector")
 st.write("Detect whether a message, email, or link is **Spam**, **Ham (Safe)**, or **Fishy**")
@@ -71,7 +83,11 @@ if st.button("Check"):
 
         st.info(f"Reason: {reason}")
 
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 958b2b4 (commit)
         if url_results:
             st.markdown("### 🔗 URLs detected:")
             for url, status in url_results:
