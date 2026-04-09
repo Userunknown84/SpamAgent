@@ -58,6 +58,4 @@ ML Prediction – Uses LinearSVC + TFIDF Vectorizer.
 URL Rules – Suspicious / short links override ham → Fishy.
 Output – Returns JSON with result and reason.
 
-📝 License
-
-This project is for educational purposes / hackathons. Do not misuse for spam or phishing.
+\
