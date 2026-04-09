@@ -2,16 +2,11 @@ import streamlit as st
 import re
 import joblib
 
-# -------------------------
-# Load trained models
-# -------------------------
+
 vectorizer = joblib.load("models/tfidf_vectorizer.pkl")
 model = joblib.load("models/linear_svm_model.pkl")
 label_encoder = joblib.load("models/label_encoder.pkl")
 
-# -------------------------
-# Helper functions
-# -------------------------
 def extract_links(text):
     """Extract URLs from the text"""
     return re.findall(r'http[s]?://\S+', text)
@@ -37,7 +32,7 @@ def classify_message(message):
         else:
             url_results.append((u, "Safe"))
 
-    # Override ML label if suspicious URL found
+  
     if suspicious and ml_label.lower() in ['ham', 'safe']:
         final_label = 'Fishy'
     else:
@@ -49,27 +44,24 @@ def classify_message(message):
 
     return final_label, reason, url_results
 
-# -------------------------
-# Streamlit UI
-# -------------------------
 st.set_page_config(page_title="Spam / Phishing Detector", layout="centered")
 st.title("📬 Spam / Fishy / Safe Detector")
 st.write("Detect whether a message, email, or link is **Spam**, **Ham (Safe)**, or **Fishy**")
 
-# Select type
+
 message_type = st.selectbox("Select type:", ["SMS", "Email", "Link (URL)"])
 
-# Input area
+
 user_input = st.text_area(f"Enter {message_type} content:")
 
-# Button to check
+
 if st.button("Check"):
     if user_input.strip() == "":
         st.warning("Please enter some text!")
     else:
         result, reason, url_results = classify_message(user_input)
 
-        # Show result
+        
         if result.lower() in ["spam", "smishing", "phishing"]:
             st.error(f"Result: {result}")
         elif result.lower() == "fishy":
@@ -79,7 +71,7 @@ if st.button("Check"):
 
         st.info(f"Reason: {reason}")
 
-        # Display URLs if any
+        
         if url_results:
             st.markdown("### 🔗 URLs detected:")
             for url, status in url_results:
