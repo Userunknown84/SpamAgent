@@ -14,20 +14,19 @@ This project is an **AI-powered Spam Detection Agent** that classifies **SMS, Em
 
 ---
 
-## 🗂️ Project Structure
 spam-agent/
-├── models/ # ML models
-│ ├── tfidf_vectorizer.pkl
-│ ├── linear_svm_model.pkl
-│ └── label_encoder.pkl
-├── skills/ # Optional AI skill logic
-│ └── classify-message/
-│ └── skill.py
-├── api.py # FastAPI backend
-├── app.py # Streamlit frontend
-├── rules.md # Project rules
-├── agentsoul.md # Agent identity / soul
-├── README.md
+├── models/                 # Machine Learning models
+│   ├── tfidf_vectorizer.pkl
+│   ├── linear_svm_model.pkl
+│   └── label_encoder.pkl
+├── skills/                 # Optional AI skill logic
+│   └── classify-message/
+│       └── skill.py
+├── api.py                   # FastAPI backend
+├── app.py                   # Streamlit frontend
+├── rules.md                 # Project rules & URL heuristics
+├── agentsoul.md             # Agent identity / personality
+└── README.md                # This file
 
 
 ---
@@ -57,5 +56,13 @@ URL Extraction – Detect URLs in the message.
 ML Prediction – Uses LinearSVC + TFIDF Vectorizer.
 URL Rules – Suspicious / short links override ham → Fishy.
 Output – Returns JSON with result and reason.
+
+Example Output:
+
+{
+  "result": "Spam",
+  "reason": "ML predicted: Spam + URL domain suspicious"
+}
+
 
 \
