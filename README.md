@@ -1,6 +1,6 @@
-# 📬 Spam Detection AI Agent
+# 📬 Spam Detection  Agent
 
-This project is an **AI-powered Spam Detection Agent** that classifies **SMS, Emails, and Links (URLs)** as **Spam, Fishy, or Safe**. It uses a **Machine Learning model** trained on text data along with **URL heuristics** to flag suspicious links.
+This project is an ** Spam Detection Agent** that classifies **SMS, Emails, and Links (URLs)** as **Spam, Fishy, or Safe**. It uses a **Machine Learning model** trained on text data along with **URL heuristics** to flag suspicious links.
 
 ---
 
